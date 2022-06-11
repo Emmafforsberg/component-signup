@@ -38,7 +38,7 @@ $width: 100%;
 }
 body {
   background: #ff7f7f;
-  background-image: url(./images/bg-intro-desktop.png);
+  background-image: url(images/bg-intro-desktop.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -200,7 +200,7 @@ footer {
 
   @media only screen and (max-width: 600px) {
     body {
-      background-image: url(./images/bg-intro-mobile.png);
+      background-image: url(images/bg-intro-mobile.png);
     }
     .container {
       flex-direction: column;
