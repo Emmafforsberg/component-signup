@@ -1,0 +1,220 @@
+/* Colors */
+$main_background: #ff7f7f;
+$error: #ff6363;
+$success: #78de8e;
+$purple: #5d4aad;
+$purple_hover: #5523ab;
+$green: #37d983;
+$green_hover: #23ab60;
+/* Width */
+$width: 100%;
+
+/* mixins */
+@mixin font {
+  font-family: Avenir Next, Arial, Helvetica, sans-serif;
+  color: #fafafa;
+  padding: 1rem;
+}
+@mixin button {
+  margin: 1rem 0rem;
+  padding: 1.3rem;
+  width: $width;
+  border: none;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  font-family: Helvetica neue, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #ff7f7f;
+  background-image: url(/images/bg-intro-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 3rem;
+}
+
+/* BEM - Nesting with scss */
+/* * * * * * * * * * * * * * 
+.form
+ -> .form__error
+    -> .form__error--state
+
+    .form{ <- BLOCK
+    ...
+      &__error{ <- ELEMENT
+      ...
+        &--link{ <- MODIFIER
+          ..
+        }
+      }
+    }
+
+* * * * * * * * * * * * * * */
+
+.content {
+  @include font;
+  width: $width / 5 * 2; /* 100 / 5 = 20 * 2 = 40% */
+
+  &__heading {
+    margin-top: 35%;
+    font-size: 3.5rem;
+  }
+
+  &__text {
+    margin: 1em 0rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+.form {
+  @include font;
+  height: 100%;
+  margin-top: 5%;
+  width: $width / 5 * 2; /* 100 / 5 = 20 * 2 = 40% */
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  &__error {
+    color: $error;
+    font-size: 0.8rem;
+    margin: 0.7rem;
+  }
+  &__state {
+    display: none;
+    margin: 0.2rem 0.4rem;
+    float: left;
+
+    &--success {
+      color: $success;
+      position: absolute;
+      margin-top: 1rem;
+      float: right;
+      width: 100%;
+    }
+    &--first {
+      color: $success;
+      position: absolute;
+      margin-top: 1.6rem;
+    }
+    &--error {
+      color: $error;
+    }
+  }
+
+  &__button--purple {
+    @include button;
+    background: $purple;
+    font-weight: 100;
+    &:hover {
+      box-shadow: 2px 4px $purple_hover;
+    }
+    & span {
+      font-weight: 500;
+    }
+  }
+  &__button--green {
+    @include button;
+    background: $green;
+    text-transform: uppercase;
+    &:hover {
+      box-shadow: 2px 4px $green_hover;
+    }
+  }
+
+  &__input {
+    background: white;
+    color: #585858;
+    display: block;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.4rem;
+    width: $width; /* 100% */
+    padding: 1rem 1.8rem;
+    margin: 0.5rem 0rem;
+
+    &:focus {
+      outline: 0.1rem solid #cacaca;
+    }
+  }
+  &__terms {
+    text-align: center;
+    color: #cacaca;
+    letter-spacing: 0.04rem;
+    &--link {
+      color: $main_background;
+      text-decoration: none;
+    }
+    &--link:hover {
+      text-decoration: underline;
+    }
+  }
+}
+footer {
+  p {
+    @include font;
+    text-align: center;
+    margin: 1.5rem auto;
+    a {
+      @include font;
+      padding: 0;
+    }
+  }
+}
+/* MObile / Tablet - change size */
+@media only screen and (max-width: 768px) {
+  .container {
+    justify-content: space-evenly;
+    padding: 0rem;
+
+    .content {
+      width: $width / 2; /* 50% */
+
+      &__heading {
+        text-align: left;
+        font-size: 3rem;
+      }
+      &__text {
+        font-size: 1rem;
+      }
+    }
+    .form {
+      width: $width / 2; /* 50% */
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-image: url(/images/bg-intro-mobile.png);
+    }
+    .container {
+      flex-direction: column;
+      padding: 0rem 4rem;
+
+      .content,
+      .form {
+        width: $width; /* 100% */
+
+        &__heading {
+          margin-top: 0rem;
+          padding: 0rem;
+        }
+      }
+    }
+    .form {
+      margin-bottom: 2rem;
+    }
+  }
+}

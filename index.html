@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="This is a sign-up form created with HTML, scss/css and JavaScript. I've created this due to a challange on Frontend Mentor">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png"
+        type="image/x-icon">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <title>Intro component with sign-up form</title>
+</head>
+
+
+<body>
+
+    <!-- container/Wrapper -->
+    <main class="container">
+        <!-- block -->
+        <div class="content">
+            <!-- Element -->
+            <h1 class="content__heading">
+                Learn coding by watching others
+            </h1>
+            <!-- Element -->
+            <p class="content__text">See how experienced developers solve
+                problems in real-time.
+                Watching scripted tutorials is great, but understanding how
+                developers think is
+                invaluable.</p> <!-- introText -->
+        </div>
+        <!-- Block -->
+        <form id="mainForm" class="form" action="#" name="myForm">
+            <!-- Element/modifier -->
+            <div class="form__button form__button--purple"><span>Try it free
+                    7 days</span> then $20/mo. thereafter
+            </div>
+            <!-- Success icon -->
+            <i
+                class="  form__state form__state--success form__state--first fa-solid fa-circle-check"></i>
+            <input type="text" name="firstname" id="firstName"
+                class="form__input form__input--name name" placeholder="Name">
+            <!-- Error icon -->
+            <i
+                class="form__state form__state--error fa-solid fa-circle-exclamation"></i>
+            <!-- Error message -->
+            <div class="form__error"></div>
+
+            <!-- Success icon -->
+            <i
+                class=" form__state form__state--success fa-solid fa-circle-check"></i>
+            <input type="text" name="lastname" id="lastName"
+                class=" form__input form__input--lastname lastname"
+                placeholder="Lastname">
+            <!-- Error icon -->
+            <i
+                class="form__state form__state--error fa-solid fa-circle-exclamation"></i>
+
+            <!-- Error message -->
+            <div class="form__error"></div>
+
+            <!-- Success icon -->
+            <i
+                class=" form__state form__state--success fa-solid fa-circle-check"></i>
+            <input type="email" name="email" id="emailAdress"
+                class="form__input form__input--email email"
+                placeholder="Email">
+
+            <!-- Error icon -->
+            <i
+                class="form__state form__state--error fa-solid fa-circle-exclamation"></i>
+            <div class="form__error"></div>
+
+            <!-- Success icon -->
+            <i
+                class=" form__state form__state--success fa-solid fa-circle-check"></i>
+            <input type="password" name="password" id="psw"
+                class="form__input form__input--password password"
+                placeholder="Password">
+            <!-- Error icon -->
+            <i
+                class="form__state form__state--error fa-solid fa-circle-exclamation"></i>
+            <!-- Error message -->
+            <div class="form__error"></div>
+
+            <button id="btn" type="submit"
+                class="form__button form__button--green"> Claim
+                your
+                free trial</button>
+            <h6 class="form__terms">By clicking the button you agree
+                to our
+                <span><a class="form__terms--link" href="#">Terms and
+                        Services</a></span>
+            </h6>
+
+        </form>
+
+    </main>
+    <footer>
+        <p class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank">Frontend Mentor</a>.
+            Coded by <a href="#">Emma Forsberg</a>.
+        </p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+/* Colors */
+/* Width */
+/* mixins */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #ff7f7f;
+  background-image: url(/images/bg-intro-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0rem 3rem;
+}
+
+/* BEM - Nesting with scss */
+/* * * * * * * * * * * * * * 
+.form
+ -> .form__error
+    -> .form__error--state
+
+    .form{ <- BLOCK
+    ...
+      &__error{ <- ELEMENT
+      ...
+        &--link{ <- MODIFIER
+          ..
+        }
+      }
+    }
+
+* * * * * * * * * * * * * * */
+.content {
+  font-family: Avenir Next, Arial, Helvetica, sans-serif;
+  color: #fafafa;
+  padding: 1rem;
+  width: 40%;
+  /* 100 / 5 = 20 * 2 = 40% */
+}
+
+.content__heading {
+  margin-top: 35%;
+  font-size: 3.5rem;
+}
+
+.content__text {
+  margin: 1em 0rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.form {
+  font-family: Avenir Next, Arial, Helvetica, sans-serif;
+  color: #fafafa;
+  padding: 1rem;
+  height: 100%;
+  margin-top: 5%;
+  width: 40%;
+  /* 100 / 5 = 20 * 2 = 40% */
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+
+.form__error {
+  color: #ff6363;
+  font-size: 0.8rem;
+  margin: 0.7rem;
+}
+
+.form__state {
+  display: none;
+  margin: 0.2rem 0.4rem;
+  float: left;
+}
+
+.form__state--success {
+  color: #78de8e;
+  position: absolute;
+  margin-top: 1rem;
+  float: right;
+  width: 100%;
+}
+
+.form__state--first {
+  color: #78de8e;
+  position: absolute;
+  margin-top: 1.6rem;
+}
+
+.form__state--error {
+  color: #ff6363;
+}
+
+.form__button--purple {
+  margin: 1rem 0rem;
+  padding: 1.3rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  font-family: Helvetica neue, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background: #5d4aad;
+  font-weight: 100;
+}
+
+.form__button--purple:hover {
+  -webkit-box-shadow: 2px 4px #5523ab;
+          box-shadow: 2px 4px #5523ab;
+}
+
+.form__button--purple span {
+  font-weight: 500;
+}
+
+.form__button--green {
+  margin: 1rem 0rem;
+  padding: 1.3rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  font-family: Helvetica neue, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background: #37d983;
+  text-transform: uppercase;
+}
+
+.form__button--green:hover {
+  -webkit-box-shadow: 2px 4px #23ab60;
+          box-shadow: 2px 4px #23ab60;
+}
+
+.form__input {
+  background: white;
+  color: #585858;
+  display: block;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.4rem;
+  width: 100%;
+  /* 100% */
+  padding: 1rem 1.8rem;
+  margin: 0.5rem 0rem;
+}
+
+.form__input:focus {
+  outline: 0.1rem solid #cacaca;
+}
+
+.form__terms {
+  text-align: center;
+  color: #cacaca;
+  letter-spacing: 0.04rem;
+}
+
+.form__terms--link {
+  color: #ff7f7f;
+  text-decoration: none;
+}
+
+.form__terms--link:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-family: Avenir Next, Arial, Helvetica, sans-serif;
+  color: #fafafa;
+  padding: 1rem;
+  text-align: center;
+  margin: 1.5rem auto;
+}
+
+footer p a {
+  font-family: Avenir Next, Arial, Helvetica, sans-serif;
+  color: #fafafa;
+  padding: 1rem;
+  padding: 0;
+}
+
+/* MObile / Tablet - change size */
+@media only screen and (max-width: 768px) {
+  .container {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding: 0rem;
+  }
+  .container .content {
+    width: 50%;
+    /* 50% */
+  }
+  .container .content__heading {
+    text-align: left;
+    font-size: 3rem;
+  }
+  .container .content__text {
+    font-size: 1rem;
+  }
+  .container .form {
+    width: 50%;
+    /* 50% */
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-width: 600px) {
+  body {
+    background-image: url(/images/bg-intro-mobile.png);
+  }
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0rem 4rem;
+  }
+  .container .content,
+  .container .form {
+    width: 100%;
+    /* 100% */
+  }
+  .container .content__heading,
+  .container .form__heading {
+    margin-top: 0rem;
+    padding: 0rem;
+  }
+  .form {
+    margin-bottom: 2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
