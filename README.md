@@ -1,4 +1,4 @@
 # component-signup
 A component with signup function
 
-If you want to see the website live - please click : https://emmafforsberg.github.io/component-signup/
+To view a live link please visit: https://emmafforsberg.github.io/component-signup/
